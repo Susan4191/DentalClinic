@@ -422,22 +422,35 @@ footer {
 /* ===== MOBILE PHONES (≤ 700px) ===== */
 @media (max-width: 700px) {
 
-   
+html, body {
+    overflow-x: hidden; 
+}
+
 .hamburger {
         display: flex;
+        z-index: 3100; /* above menu but below logo */
     }
 
     #menu-toggle:checked ~ .menu {
         transform: translateX(0);
     }
-   
+nav {
+    position: fixed;
+    width: 100%;    
+}
+   nav .logo {
+
+        z-index: 2100; /* ensure logo stays above menu */
+    
+    }
+
     nav .menu {
-        position: fixed; /* cover full screen */
+        position: fixed;
         top: 60px; /* below navbar */
         right: 0;
         background-color: #060558;
-        width: 300px; /* menu width */
-        height: calc(100vh - 60px); /* full height minus navbar */
+        width: 300px; 
+        height: calc(100vh - 60px); 
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
@@ -493,3 +506,30 @@ footer {
         flex-direction: column;
     }
 }
+
+/* ===== EXTRA SMALL PHONES (≤ 400px) ===== */                  
+@media (max-width: 400px) {
+    .home h1 {
+        font-size: 2rem;
+        top: 30%;
+        left: 50%; 
+    }
+    .home p {
+        font-size: 1.2rem;
+        top: 38%;
+        left: 50%;
+    }
+    .home button {
+        top: 44%;
+        left: 50%;
+    }
+    .about h1 {
+        font-size: 1rem;
+    }
+    .servicescard {
+        width: 120px;
+        margin: 8px;
+    }
+}
+ 
+     
