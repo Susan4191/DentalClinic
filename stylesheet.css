@@ -1,0 +1,495 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    
+}
+
+/* ================= NAVBAR ================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #060558;
+    padding:8px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 2000; /* increased to stay above mobile menu */
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #FFD700;
+    z-index: 2100; /* ensure logo stays above menu */
+}
+
+nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    transition: 0.3s ease;
+    z-index: 2000; /* menu below logo */
+}
+
+nav .menu li a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav .menu li a:hover {
+    color: #00BFFF;
+    text-decoration: underline;
+}
+
+/* ================= HAMBURGER ================= */
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 2001; /* above menu but below logo */
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+/* ====== HAMBURGER → X ANIMATION ====== */
+#menu-toggle:checked + .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+#menu-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked + .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* OPEN MENU WHEN CHECKED */
+#menu-toggle:checked ~ .menu {
+    transform: translateX(0);
+}
+
+/* ================= HOME ================= */
+.home {
+    position: relative;
+    text-align: center;
+    color: #FFD700;
+}
+
+.home img {
+    width: 100%;
+    height: 95vh;
+    object-fit: cover;
+   
+}
+
+.home h1 {
+    position: absolute;
+    top: 38%;
+    left: 62%;
+    bottom: 5%;
+    font-size: 2.5rem;
+}
+
+.home p {
+    position: absolute;
+    top: 45%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+}
+
+.home button {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #060558; 
+    color: #FFD700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.home button:hover {
+    background-color: #00BFFF;
+}
+
+/* ================= ABOUT ================= */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+    padding: 50px;
+    background-color: #f1f1f1f1;
+}
+.about-text {
+    display: block;
+}
+
+.about img {
+    align-items: center;
+    border-radius: 10px;
+    width: auto;
+    height: 500px;
+    top: 2%;
+
+
+}
+.about h1 {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #FFD700;
+    font-display: none;
+    margin-top: 4%;
+    font-size: 1.5rem;
+}
+
+.about p {
+    line-height: 1.8;
+    color: #060558;
+    margin-top: -2%;
+
+    
+}
+
+/* ================= SERVICES ================= */
+.services {
+    text-align: center;
+    padding: 5px 20px;
+    background-color: #f1f1f1;
+}
+
+.services h1 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #FFD700;
+}
+
+.servicescard {
+    display: inline-block;
+    width: 220px;
+    margin: 15px;
+    background-color: #00BFFF;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    box-shadow: 0px 0px 15px #FFD700(0,0,0,0.1);
+}
+
+.servicescard img {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+.servicescard p {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #060558;
+}
+
+.servicescard:hover {
+    transform: translateY(-10px);
+}
+
+/* ================= APPOINTMENT ================= */
+.appointment {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #0078d4;
+}
+.appointment h1 {
+    color: #FFD700;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.appointment .form {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #00BFFF;
+    color: #000;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+}
+
+.appointment .form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;;
+}
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.appointment input,
+.appointment select,
+.appointment textarea {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+    
+}
+
+.appointment button {
+    padding: 12px;
+    background-color: #060558;
+    color: #FFD700;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.appointment button:hover {
+    background-color: #005a9c;
+}
+
+/* ================= CONTACT ================= */
+.CONTACT {
+    background-color: #060558;
+    padding: 40px 20px;
+    text-align: center;
+    color: #FFD700;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.social-btn.facebook { background: #1877f2; }
+.social-btn.whatsapp { background: #25d366; }
+.social-btn.tiktok    { background: #000000; }
+.social-btn.instagram  { background: #C13584; }
+
+
+/* ================= FOOTER ================= */
+footer {
+    background-color: #060558;
+    color: #FFD700;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ================= MEDIA QUERIES ================= */
+
+/* =====================
+   Screens < 1100px (Tablets & small laptops)
+   ===================== */
+   @media (max-width: 1110px) {
+    .home h1 {
+        align-items: center;
+        font-size: 2rem;
+        top: 40%;
+        left: 60%;   
+    }
+    .home p {
+        font-size: 1.2rem;
+        top: 46%;
+        left: center;
+    }
+    .about img {
+        height: 400px;
+        width: 400px;
+    }
+}
+/* =====================
+   Default (Desktop < 900px)
+   ===================== */
+
+@media (max-width: 840px) {
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    transform: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.home h1 {
+    align-items: center;
+    font-size: 2rem;
+    top: 40%;
+    left: 55%;   
+}
+.about {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+.about img {
+    height: 650px;
+    width: 350px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+}
+}
+/* =====================
+   Default (Desktop  <7730px)
+   ===================== */
+
+@media (max-width: 840px) {
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    transform: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.home h1 {
+    align-items: center;
+    font-size: 2rem;
+    top: 40%;
+    left: 50%;   
+}
+.home p {
+    font-size: 1.2rem;
+    top: 46%;
+    left: 70%;
+}
+.home button {
+    top: 50%;
+    left: 70%;
+}
+.about {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+.about img {
+    height: 650px;
+    width: 350px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+}
+}
+/* ===== MOBILE PHONES (≤ 700px) ===== */
+@media (max-width: 700px) {
+
+   
+.hamburger {
+        display: flex;
+    }
+
+    #menu-toggle:checked ~ .menu {
+        transform: translateX(0);
+    }
+   
+    nav .menu {
+        position: fixed; /* cover full screen */
+        top: 60px; /* below navbar */
+        right: 0;
+        background-color: #060558;
+        width: 300px; /* menu width */
+        height: calc(100vh - 60px); /* full height minus navbar */
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 15px;
+        gap: 15px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1999; /* below logo */
+    }
+
+    nav .menu li a {
+        font-size: 1.2rem;
+        width: 100%;
+    }
+
+    /* ===== HOME ===== */
+    .home h1 {
+        align-items: center;
+        font-size: 2.5rem;
+        top: 35%;
+        left: 15%; 
+        right: inherit;  
+    }
+    .home p {
+        font-size: 1.5rem;
+        top: 42%;
+        left: 50%;
+    }
+    .home button {
+        top: 48%;
+        left: 50%;
+    }
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about img {
+        height: 300px;
+        width: auto;
+    }
+    .about h1 {
+        font-size: 1.2rem;
+        margin-top: 20px;
+    }
+    .servicescard {
+        width: 150px;
+        margin: 10px;
+    }
+    .appointment .form {
+        padding: 20px;
+    }
+    .form-row {
+        flex-direction: column;
+    }
+}
