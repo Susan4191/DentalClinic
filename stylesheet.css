@@ -436,7 +436,9 @@ html, body {
     }
 nav {
     position: fixed;
-    width: 100%;    
+    width: 100%;
+    top: 0;
+    
 }
    nav .logo {
 
