@@ -504,6 +504,8 @@ nav {
     .form-row {
         flex-direction: column;
     }
+    .CONTACT p {
+    color: #FFD700;
 }
 
 /* ===== SMALL PHONES (≤ 600px) ===== */
