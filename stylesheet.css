@@ -507,7 +507,7 @@ nav {
     .CONTACT p {
     color: #FFD700;
 }
-
+}
 /* ===== SMALL PHONES (≤ 600px) ===== */
 @media (max-width: 600px) {
      .home h1 {
