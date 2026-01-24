@@ -283,9 +283,15 @@ textarea {
     text-align: center;
     color: #FFD700;
 }
-.CONTACT p {
+.CONTACT a {
     color: #FFD700;
+    text-decoration: none;
 }
+
+.CONTACT a:hover {
+    color: #00BFFF;
+}
+
 .social-links {
     display: flex;
     justify-content: center;
